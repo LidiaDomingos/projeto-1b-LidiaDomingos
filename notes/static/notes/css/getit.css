@@ -227,3 +227,30 @@ a {
   color: black;
 }
  
+.container-tags{
+  display: flex; 
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  height: 10rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.container-notas-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,29 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+    <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+  </div>
+<main>
+<h1 class="titulo">
+    Lista de Tags
+</h1>
+<div class="container-tags">
+    {% for tag in tags %}
+    <div class = "tags">
+        <form method="get" action = "notasTag">
+        <input type = "hidden" name = "id" value={{tag.id}}>
+        <a href = "tag/{{tag.id}}">
+            {{tag.tag}}
+        </a>
+        </form>
+    </div>
+{% endfor %}
+</div>
+
+</main>
+
+{% endblock %}

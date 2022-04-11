@@ -9,6 +9,7 @@
   </div>
 
 <main class="container">
+  
 
   <form method="post" class = "form-card">
     {% csrf_token %}
@@ -23,11 +24,25 @@
     name="detalhes"
     placeholder="Digite o conteúdo..."
   ></textarea>
+  <input
+    class="form-card-title"
+    type="text"
+    name="tag"
+    placeholder="#"
+  />
+
   <button class="btn" type="submit">
     Criar
   </button>
   </form>
-
+  <form method="get" action = "listaTags">
+    {% csrf_token %}
+    <button class="btn" type = "submit">
+      <a href="listaTags">
+        Lista de Tags
+      </a>
+    </button>
+  </form>
   <div class="card-container">
       {% for note in notes %}
       <div>
@@ -39,6 +54,13 @@
           <p>
             {{note.content}}
           </p>
+        </div>
+        <div>
+          <div class="card-content">
+            <h3 class = "card-title">
+              Tag: {{ note.tag.tag }}
+            </h3>
+          </div>
         </div>
       </div>
 
@@ -64,6 +86,7 @@
     </div>
   {% endfor %}
 </div>
+
 
 </main>
 
